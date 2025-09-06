@@ -1,5 +1,6 @@
 import 'package:crud_api/models/company_model.dart';
 import 'package:crud_api/screens/create_company_screen.dart';
+import 'package:crud_api/screens/edit_company_screen.dart';
 import 'package:crud_api/services/company_services.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +79,14 @@ class _CompanyScreenState extends State<CompanyScreen> {
                               color: Colors.pinkAccent),
                           onPressed: () {
                             // edit logic here
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EditCompanyScreen(
+                                  company: companies[index],
+                                ),
+                              ),
+                            );
                           },
                         ),
                         const SizedBox(width: 15),
